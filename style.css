@@ -1,0 +1,86 @@
+html,body{
+	height: 100%;
+}
+
+.sky{
+	height: 35%;
+	background-color: lightblue;
+}
+
+.grass{
+	height: 20%;
+	background-color: #44870c;
+}
+
+.road{
+	height: 45%;
+	background-color: #4d4845;
+	position: relative;
+}
+
+.road .lines{
+	border: 5px dashed white;
+	height: 0px;
+	width: 100%;
+	position: absolute;
+	top: 50%;
+}
+
+.one, 
+.two {
+	height: 50px;
+	position: absolute;
+	left: 10px;
+}
+
+.far {
+	height: 60px;
+	position: absolute;
+	left: 10px;
+	top: 7px;
+	opacity: 0.5;
+	animation: flow 50s 5s linear infinite;
+	animation-direction: reverse;
+	animation-fill-mode: both;
+}
+
+.near {
+	height: 80px;
+	position: absolute;
+	left: 10px;
+	top: 10px;
+	position: absolute;
+	left: 100px;
+	animation-fill-mode: both;
+	animation: flow 40s linear infinite;
+	animation-direction: reverse;
+}
+
+.one{
+	/*name, duration, function,delay(optional), iteration*/
+	animation-fill-mode: both;
+	animation: travel 5s linear infinite, hump 0.3s 1.2s ease;
+}
+
+.two{
+	top: 60%;
+	animation-fill-mode: both;
+	animation: travel 4s linear infinite;
+
+}
+
+@keyframes travel{
+	from {left: 0%;}
+	to {left: 100%;}
+}
+
+@keyframes flow{
+	from {left: 0%}
+	to {left: 90%}
+}
+
+@keyframes hump{
+	0% {top: 0}	
+	50% {top: -100px}
+	100% {top: 0}
+}
